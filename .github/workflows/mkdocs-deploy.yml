@@ -17,5 +17,6 @@ jobs:
           python-version: 3.x
       - run: pip install mkdocs-material==8.2.13
       - run: pip install mike==1.1.2
-      - run: mike deploy $FUSION_VERSION latest -u -b gh-pages
-      - run: git status
+      - run: git checkout gh-pages
+      - run: mike deploy $FUSION_VERSION latest -u
+      - run: git push
