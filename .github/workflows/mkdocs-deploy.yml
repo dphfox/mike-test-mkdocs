@@ -3,6 +3,10 @@ on:
   push:
     branches:
       - main
+
+env:
+  FUSION_VERSION: 0.1
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -12,4 +16,5 @@ jobs:
         with:
           python-version: 3.x
       - run: pip install mkdocs-material==8.2.13
-      - run: mkdocs gh-deploy --force
+      - run: pip install mike==1.1.2
+      - run: mike deploy $FUSION_VERSION latest -u -b gh-pages -p
