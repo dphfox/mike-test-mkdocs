@@ -11,10 +11,11 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
         with:
           python-version: 3.x
       - run: pip install mkdocs-material==8.2.13
       - run: pip install mike==1.1.2
-      - run: mike deploy $FUSION_VERSION latest -u -b gh-pages -p
+      - run: mike deploy $FUSION_VERSION latest -u -b gh-pages
+      - run: git status
