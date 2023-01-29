@@ -6,6 +6,7 @@ on:
 
 env:
   FUSION_VERSION: 0.42
+  PREV_VERSION: 0.1
 
 jobs:
   deploy:
@@ -34,7 +35,11 @@ jobs:
         run: git fetch origin gh-pages --depth=1
 
       - name: Deploy documentation
-        run: mike deploy $FUSION_VERSION latest -u -b gh-pages -p
+        run: mike deploy $FUSION_VERSION latest -u -b gh-pages
+
+      - name: Mark old documentation as outdated
+        if: env.PREV_VERSION != env.FUSION_VERSION
+        run: mike deploy $PREV_VERSION -b gh-pages
 
       - name: Set default version to latest
         run: mike set-default latest -b gh-pages -p
