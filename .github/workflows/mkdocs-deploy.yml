@@ -36,5 +36,4 @@ jobs:
       - name: Deploy documentation
         run: mike deploy $FUSION_VERSION latest -u -b gh-pages -p
 
-      - name: Create default redirects
-        run: cp -a latest/. .
+      - run: ls .
