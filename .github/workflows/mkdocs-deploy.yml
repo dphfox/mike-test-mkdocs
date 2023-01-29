@@ -5,7 +5,7 @@ on:
       - main
 
 env:
-  FUSION_VERSION: 0.1
+  FUSION_VERSION: 0.420
 
 jobs:
   deploy:
