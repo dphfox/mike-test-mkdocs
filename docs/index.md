@@ -8,7 +8,7 @@
 <script src="assets/index.js"></script>
 
 <section class="fusion-home-landing">
-    <h1>Build your best UI.</h1>
+    <h1>Build your best UI testtest.</h1>
     <p>
         Fusion is a modern reactive UI library, built specifically for
         <a href="https://developer.roblox.com/">Roblox</a>
